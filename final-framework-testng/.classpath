@@ -19,5 +19,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/IBM_ADMIN/Documents/selenium/selenium jar files/TestNg-6.14.3/testng-6.14.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

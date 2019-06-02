@@ -4,35 +4,45 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 
 public class LoginPOM {
-	private WebDriver driver; 
+		private WebDriver driver; 
 	
-	public LoginPOM(WebDriver driver) {
+		public LoginPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
+		
+
+	@FindBy(linkText="Log In / Register")
+	private WebElement LoginTab;
 	
-	@FindBy(id="login")
-	private WebElement userName; 
+	@FindBy(id="user_login")
+	private WebElement LoginId; 
 	
-	@FindBy(id="password")
-	private WebElement password;
+	@FindBy(id="user_pass")
+	private WebElement Password;
 	
-	@FindBy(id="formLogin_submitAuth")
-	private WebElement loginBtn; 
+
+	@FindBy(name="login")
+	private WebElement SignIn;
 	
-	public void sendUserName(String userName) {
-		this.userName.clear();
-		this.userName.sendKeys(userName);
+	public void selectlink() {
+			this.LoginTab.click();
 	}
 	
-	public void sendPassword(String password) {
-		this.password.clear(); 
-		this.password.sendKeys(password); 
+	public void userName(String LoginId) {
+		this.LoginId.clear(); 
+		this.LoginId.sendKeys(LoginId); 
+	}
+	public void password(String Password) {
+		this.Password.clear(); 
+		this.Password.sendKeys(Password); 
 	}
 	
-	public void clickLoginBtn() {
-		this.loginBtn.click(); 
+	public void clickSignInBtn() {
+		this.SignIn.click(); 
 	}
-}
+
+	}
