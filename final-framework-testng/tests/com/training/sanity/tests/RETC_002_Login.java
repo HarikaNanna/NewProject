@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -41,17 +42,19 @@ public class RETC_002_Login {
 	}
 	
 	
-	  @AfterMethod public void tearDown() throws Exception { 
+	
+	  @AfterClass
+	  public void tearDown() throws Exception { 
 		  Thread.sleep(1000);
-		  driver.quit(); 
-		  }
+	  driver.quit(); }
+	 
 	 
 	@Test
 	public void validLoginTest() throws InterruptedException {
 		loginPOM.selectlink();
 		Thread.sleep(1000);
 		loginPOM.userName("harika.nanna@gmail.com");
-		loginPOM.password("Hayat777");
+		loginPOM.password("hayat777");
 		loginPOM.clickSignInBtn();
 		screenShot.captureScreenShot("Second");
 	}
