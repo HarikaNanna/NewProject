@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="46837" started-at="2019-06-17T09:07:48Z" finished-at="2019-06-17T09:08:35Z">
+  <suite name="Default suite" duration-ms="85045" started-at="2019-06-21T10:18:22Z" finished-at="2019-06-21T10:19:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="46837" started-at="2019-06-17T09:07:48Z" finished-at="2019-06-17T09:08:35Z">
-      <class name="com.training.sanity.tests.RETC_035_NewUser">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RETC_035_NewUser@14acaea5]" name="setUpBeforeClass" is-config="true" duration-ms="22244" started-at="2019-06-17T09:07:48Z" finished-at="2019-06-17T09:08:10Z">
+    <test name="Default test" duration-ms="85045" started-at="2019-06-21T10:18:22Z" finished-at="2019-06-21T10:19:47Z">
+      <class name="com.training.sanity.tests.RETC_065_posts">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RETC_065_posts@14acaea5]" name="setUpBeforeClass" is-config="true" duration-ms="22195" started-at="2019-06-21T10:18:22Z" finished-at="2019-06-21T10:18:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.RETC_035_NewUser@14acaea5]" name="validLoginTest" duration-ms="10552" started-at="2019-06-17T09:08:10Z" finished-at="2019-06-17T09:08:21Z">
+        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.RETC_065_posts@14acaea5]" name="validLoginTest" duration-ms="8753" started-at="2019-06-21T10:18:44Z" finished-at="2019-06-21T10:18:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method status="PASS" signature="ValidateTitle0()[pri:1, instance:com.training.sanity.tests.RETC_035_NewUser@14acaea5]" name="ValidateTitle0" duration-ms="10" started-at="2019-06-17T09:08:21Z" finished-at="2019-06-17T09:08:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateTitle0 -->
-        <test-method status="PASS" signature="users()[pri:2, instance:com.training.sanity.tests.RETC_035_NewUser@14acaea5]" name="users" duration-ms="5734" started-at="2019-06-17T09:08:21Z" finished-at="2019-06-17T09:08:27Z">
+        <test-method status="PASS" signature="users()[pri:1, instance:com.training.sanity.tests.RETC_065_posts@14acaea5]" name="users" duration-ms="30172" started-at="2019-06-21T10:18:53Z" finished-at="2019-06-21T10:19:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- users -->
-        <test-method status="PASS" signature="ValidateTitle1()[pri:3, instance:com.training.sanity.tests.RETC_035_NewUser@14acaea5]" name="ValidateTitle1" duration-ms="8" started-at="2019-06-17T09:08:27Z" finished-at="2019-06-17T09:08:27Z">
+        <test-method status="PASS" signature="ValidateTitle1()[pri:2, instance:com.training.sanity.tests.RETC_065_posts@14acaea5]" name="ValidateTitle1" duration-ms="13" started-at="2019-06-21T10:19:23Z" finished-at="2019-06-21T10:19:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateTitle1 -->
-        <test-method status="PASS" signature="addUser()[pri:4, instance:com.training.sanity.tests.RETC_035_NewUser@14acaea5]" name="addUser" duration-ms="8237" started-at="2019-06-17T09:08:27Z" finished-at="2019-06-17T09:08:35Z">
+        <test-method status="PASS" signature="addUser()[pri:3, instance:com.training.sanity.tests.RETC_065_posts@14acaea5]" name="addUser" duration-ms="23880" started-at="2019-06-21T10:19:23Z" depends-on-methods="com.training.sanity.tests.RETC_065_posts.ValidateTitle1" finished-at="2019-06-21T10:19:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addUser -->
-      </class> <!-- com.training.sanity.tests.RETC_035_NewUser -->
+      </class> <!-- com.training.sanity.tests.RETC_065_posts -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

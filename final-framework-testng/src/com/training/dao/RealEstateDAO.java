@@ -12,11 +12,11 @@ import com.training.connection.GetConnection;
 import com.training.utility.LoadDBDetails;
 
 // Data Access Object 
-public class ELearningDAO {
+public class RealEstateDAO {
 	
 	Properties properties; 
 	
-	public ELearningDAO() {
+	public RealEstateDAO() {
 		 try {
 			properties = new Properties();
 			FileInputStream inStream = new FileInputStream("./resources/sql.properties");
@@ -55,7 +55,7 @@ public class ELearningDAO {
 	}
 	
 	public static void main(String[] args) {
-		new ELearningDAO().getLogins().forEach(System.out :: println);
+		new RealEstateDAO().getLogins().forEach(System.out :: println);
 	}
 	
 	

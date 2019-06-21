@@ -2,7 +2,9 @@ package com.training.readexcel;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -11,7 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  * 
- * @author Naveen
+ * @author naveen
  * @see this class will take the records from excel sheet, and return it as list
  *      of list of object, and can be generic, can given any records until it
  *      exists. Test it with main method provided, and the path is hard coded,
@@ -19,9 +21,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *      access.
  */
 public class ApachePOIExcelRead {
-	public  String [][] getExcelContent(String fileName) {
-		int rowCount =0; 
-		String [][] list1 = null; 
+	public static  List<List<Object>> getExcelContent(String fileName, String sheetName) {
+		List<List<Object>> list = new ArrayList<List<Object>>();
+		
+		//int rowCount =0; 
+		//String [][] list1 = null; 
 		
 		try {
 			System.out.println("File Name Got " + fileName);
@@ -31,7 +35,7 @@ public class ApachePOIExcelRead {
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 
 			// Get first/desired sheet from the workbook
-			XSSFSheet sheet = workbook.getSheetAt(0);
+			XSSFSheet sheet = workbook.getSheet(sheetName);
 			
 			int rowTotal = sheet.getLastRowNum();
 
@@ -42,7 +46,7 @@ public class ApachePOIExcelRead {
 			
 			// Iterate through each rows one by one
 			Iterator<Row> rowIterator = sheet.iterator();
-			 list1 = new String[rowTotal][2];
+			// list1 = new String[rowTotal][2];
 			 
 			while (rowIterator.hasNext()) {
 				Row row = rowIterator.next();
@@ -51,7 +55,7 @@ public class ApachePOIExcelRead {
 
 				int cellCount = 0; 
 				int noOfColumns = row.getLastCellNum(); 
-				String[] tempList1 = new String[noOfColumns];
+				List<Object> tempList = new ArrayList<Object>();
 				
 				
 				
@@ -63,39 +67,33 @@ public class ApachePOIExcelRead {
 					case Cell.CELL_TYPE_NUMERIC:
 						
 						if(((Double) cell.getNumericCellValue()).toString()!=null){
-							tempList1[cellCount] = ((Double) cell.getNumericCellValue()).toString(); 
+							tempList.add(((Double) cell.getNumericCellValue()).toString()); 
 						} 
 						break;
 					case Cell.CELL_TYPE_STRING:
 						if(cell.getStringCellValue()!=null){
-							tempList1[cellCount] =cell.getStringCellValue();
+							tempList.add(cell.getStringCellValue());
 						}
 						break;
 					}
-					cellCount ++; 
+					 
 				}
-				if(tempList1 != null){
-					list1[rowCount++] = tempList1;
+				list.add(tempList);
 				}
-			}
-		
-			
-			file.close();
+				file.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return list1;
+		return list;
 	}
 
 	public static void main(String[] args) {
-		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
-		
-		for(String [] temp : new ApachePOIExcelRead().getExcelContent(fileName)){
-			for(String  tt : temp){
-				System.out.println(tt);
+		String fileName = "C:\\Users\\IBM_ADMIN\\Desktop\\selenium\\project\\Testing.xlsx";
+		String sheetName= "Sheet1";
+		for(List<Object> temp : getExcelContent(fileName,sheetName)){
+					System.out.println(temp.get(0)+", "+temp.get(1)+", "+temp.get(2));
 			}
 		}
 
 	}
-}

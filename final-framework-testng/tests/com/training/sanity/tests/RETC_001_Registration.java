@@ -51,10 +51,10 @@ public class RETC_001_Registration {
 		registrationPOM.selectlink();
 		Thread.sleep(1000);
 		registrationPOM.registerTab();
-		registrationPOM.sendEmail("harika.nanna2@gmail.com");
-		registrationPOM.sendFirstName("Harika");
+		registrationPOM.sendEmail("harika4@gmail.com");
+		registrationPOM.sendFirstName("Harika4");
 		registrationPOM.sendLastName("Nanna"); 
 		registrationPOM.clickRegisterBtn();
-		screenShot.captureScreenShot("First");
+		screenShot.captureScreenShot("first");
 	}
 }

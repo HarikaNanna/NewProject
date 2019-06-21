@@ -20,6 +20,8 @@ public class NewLaunchPOM {
 	private WebElement newLaunchTab;
 	@FindBy(xpath="(//a[@title='Nullam hendrerit Apartments']/img[@class='attachment-wpmm_thumb size-wpmm_thumb wp-post-image'])[1]")
 	private WebElement selectOptoin;
+	@FindBy(xpath="//*[@id=\"wpmm-megamenu\"]/div/div[2]/div[1]/a")
+	private WebElement selectOptoin1;
 	@FindBy(xpath="(//button[@class='slick-next slick-arrow'])[1]")
 	private WebElement nextphoto;
 	@FindBy(name="your-name")
@@ -58,6 +60,9 @@ public class NewLaunchPOM {
 				this.selectOptoin.click();
 	}
 	
+    public void selection1() { 
+			this.selectOptoin1.click();
+    }
 	public void next() {
 		for(int i=0;i<=4;i++) {
 		this.nextphoto.click();

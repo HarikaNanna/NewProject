@@ -46,13 +46,26 @@ public class RegistrationPOM {
 		this.Email.sendKeys(Email);
 	}
 	
+	public String getEmail() {
+		return this.Email.getAttribute("value");
+	}
+	
 	public void sendFirstName(String FirstName) {
 		this.FirstName.clear(); 
 		this.FirstName.sendKeys(FirstName); 
 	}
+	
+
+	public String getFirstName() {
+		return this.FirstName.getAttribute("value");
+	}
+	
 	public void sendLastName(String LastName) {
 		this.LastName.clear(); 
 		this.LastName.sendKeys(LastName); 
+	}
+	public String getLastName() {
+		return this.LastName.getAttribute("value");
 	}
 	
 	public void clickRegisterBtn() {
